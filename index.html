@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function updateCurrencySymbol(symbol) {
+            var prices = document.querySelectorAll('.price');
+            prices.forEach(function(price) {
+                var currencySpan = price.querySelector('.currency');
+                currencySpan.textContent = symbol;
+            });
+        }
+
+        function updateUnit(unit) {
+            var units = document.querySelectorAll('.unit');
+            units.forEach(function(unitSpan) {
+                unitSpan.textContent = unit;
+            });
+        }
+
+        function togglePricing(pricingOption) {
+            var pricingPlans = document.querySelectorAll('.pricing-plan');
+            pricingPlans.forEach(function(plan) {
+                var planOption = plan.getAttribute('data-pricing-option');
+                if (planOption === pricingOption || pricingOption === 'all') {
+                    plan.style.display = 'block';
+                } else {
+                    plan.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Our Pricing Plans</h1>
+    </header>
+    <main>
+        <div class="options">
+            <label>
+                <input type="radio" name="currency" onclick="updateCurrencySymbol('$')" checked> $
+            </label>
+            <label>
+                <input type="radio" name="currency" onclick="updateCurrencySymbol('€')"> €
+            </label>
+            <label>
+                <input type="radio" name="currency" onclick="updateCurrencySymbol('£')"> £
+            </label>
+            <label>
+                <input type="radio" name="currency" onclick="updateCurrencySymbol('₹')"> ₹
+            </label>
+            <label>
+                <input type="radio" name="unit" onclick="updateUnit('month')" checked> Month
+            </label>
+            <label>
+                <input type="radio" name="unit" onclick="updateUnit('year')"> Year
+            </label>
+            <label>
+                <input type="radio" name="pricing-option" onclick="togglePricing('basic')" checked> Basic
+            </label>
+            <label>
+                <input type="radio" name="pricing-option" onclick="togglePricing('standard')"> Standard
+            </label>
+            <label>
+                <input type="radio" name="pricing-option" onclick="togglePricing('premium')"> Premium
+            </label>
+            <label>
+                <input type="radio" name="pricing-option" onclick="togglePricing('all')"> All Plans
+            </label>
+        </div>
+        <section class="pricing-plan" data-pricing-option="basic">
+            <h2>Basic Plan</h2>
+            <p class="price"><span class="currency">$</span>10/<span class="unit">month</span></p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+            <a href="#" class="btn">Choose Plan</a>
+        </section>
+        <section class="pricing-plan" data-pricing-option="standard">
+            <h2>Standard Plan</h2>
+            <p class="price"><span class="currency">$</span>20/<span class="unit">month</span></p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+            </ul>
+            <a href="#" class="btn">Choose Plan</a>
+        </section>
+        <section class="pricing-plan" data-pricing-option="premium">
+            <h2>Premium Plan</h2>
+            <p class="price"><span class="currency">$</span>30/<span class="unit">month</span></p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+                <li>Feature 5</li>
+            </ul>
+            <a href="#" class="btn">Choose Plan</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Pricing Landing Page</p>
+    </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pricing Page</h1>
+    </header>
+    <main>
+        <section class="pricing-plans">
+            <div class="plan">
+                <h2>Basic</h2>
+                <p class="price">$10</p>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                </ul>
+            </div>
+            <div class="plan">
+                <h2>Premium</h2>
+                <p class="price">$20</p>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                    <li>Feature 4</li>
+                </ul>
+            </div>
+        </section>
+        <section class="customization">
+            <h2>Customization</h2>
+            <label for="currency">Select Currency:</label>
+            <select id="currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <!-- Add more currency options as needed -->
+            </select>
+            <!-- Add unit customization options if required -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

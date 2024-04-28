@@ -1,0 +1,98 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Pricing plans container */
+.pricing-plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute plans evenly across the container */
+}
+
+/* Individual pricing plan card styles */
+.plan {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: calc(50% - 20px); /* Calculate 50% width for each plan minus the margin */
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer; /* Cursor changes to pointer on hover for interactive feel */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Pricing plan hover effect */
+.plan:hover {
+    transform: translateY(-5px); /* Move the plan up slightly on hover */
+}
+
+/* Pricing plan title styles */
+.plan h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Pricing styles */
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff; /* Blue color for price to make it stand out */
+    margin-bottom: 20px;
+}
+
+/* Features list styles */
+.plan ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan li {
+    margin-bottom: 10px;
+}
+
+/* Currency customization section styles */
+.customization {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Label styles for currency selection */
+.customization label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* Select dropdown styles for currency selection */
+.customization select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer; /* Cursor changes to pointer on hover for interactive feel */
+}
